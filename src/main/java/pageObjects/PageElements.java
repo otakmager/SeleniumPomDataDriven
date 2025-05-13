@@ -1,10 +1,12 @@
 package pageObjects;
 
 public interface PageElements {
-    String topBarId = "topbar";
     String digitalDutchLogoId = "digitaldutch_logo";
-    String titleHeaderId = "title";
+    String bannerTitleHeaderId = "title";
     String converterTitleHeaderId = "quantity-title";
+
+    String sideBarXPath = "//div[@id='left-content']";
+    String sideBarAlternateXPath = "//div[@id='unitSelector']";
 
     String emailFooterXPath = "//a[starts-with(@href, 'mailto:')]";
     String whatsNewFooterXPath = "//a[text()='What\'s New']";
