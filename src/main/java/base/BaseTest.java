@@ -68,7 +68,6 @@ public class BaseTest {
             logger.log(Status.PASS,
                     MarkupHelper.createLabel(result.getName() + " testcase passed.", ExtentColor.GREEN));
         }
-        driver.quit();
     }
 
     @AfterTest

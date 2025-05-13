@@ -8,10 +8,10 @@ public interface PageElements {
     String sideBarXPath = "//div[@id='left-content']";
     String sideBarAlternateXPath = "//div[@id='unitSelector']";
 
-    String emailFooterXPath = "//a[starts-with(@href, 'mailto:')]";
-    String whatsNewFooterXPath = "//a[text()='What\'s New']";
-    String tipsFooterXPath = "//a[text()='Tips']";
-    String disclaimerFooterXPath = "//a[text()='Disclaimer']";
+    String emailFooterXPath = "//div[@class='footer']/a[starts-with(@href, 'mailto:')]";
+    String whatsNewFooterXPath = "//div[@class='footer']/a[text()=\"What's New\"]";
+    String tipsFooterXPath = "//div[@class='footer']/a[text()='Tips']";
+    String disclaimerFooterXPath = "//div[@class='footer']/a[text()='Disclaimer']";
 
     String whatsNewDivXPath = "//div[@id='whatsNew']";
     String tipsDivXPath = "//div[@id='tips']";

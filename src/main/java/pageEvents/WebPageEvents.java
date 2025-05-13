@@ -7,7 +7,7 @@ import org.testng.Assert;
 import pageObjects.PageElements;
 import utils.ElementFetch;
 
-public class PageEvents {
+public class WebPageEvents {
     ElementFetch el = new ElementFetch();
 
     public void verifyPageTitle() {
@@ -21,7 +21,7 @@ public class PageEvents {
 
         Assert.assertTrue(actualTitle.contains(templateTitle), "Page title is not as expected");
 
-        if(additionalTitle != null && !additionalTitle.isEmpty()) {
+        if (additionalTitle != null && !additionalTitle.isEmpty()) {
             expectedTitle = additionalTitle + " " + templateTitle;
             Assert.assertEquals(actualTitle, expectedTitle, "Page title is not as expected");
         }
@@ -33,19 +33,19 @@ public class PageEvents {
         Assert.assertEquals(actualHeading, expectedHeading, "Heading is not as expected");
     }
 
+    public void verifyLogoOnBanner() {
+        WebElement element = el.getWebElement("ID", PageElements.digitalDutchLogoId);
+        Assert.assertTrue(element.isDisplayed(), "Logo is not displayed on the banner");
+    }
+
     public void verifyConverterTitleHeader(String expectedTitle) {
         WebElement element = el.getWebElement("ID", PageElements.converterTitleHeaderId);
         String actualTitle = element.getText();
         Assert.assertEquals(actualTitle, expectedTitle, "Title is not as expected");
     }
 
-    public void verifyLogoOnBanner() {
-        WebElement element = el.getWebElement("ID", PageElements.digitalDutchLogoId);
-        Assert.assertTrue(element.isDisplayed(), "Logo is not displayed on the banner");
-    }
-
     public void verifyEmailOnFooter() {
-        WebElement element = el.getWebElement("ID", PageElements.emailFooterXPath);
+        WebElement element = el.getWebElement("XPATH", PageElements.emailFooterXPath);
         String expectedEmail = "info@digitaldutch.com";
         String actualEmail = element.getText();
         Assert.assertTrue(element.isDisplayed(), "Email is not displayed on the footer");
