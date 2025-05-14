@@ -9,33 +9,106 @@ import java.util.List;
 public class ElementFetch {
 
     public String getPageTitle() {
-        return BaseTest.driver.getTitle();
+        try {
+            String title = BaseTest.driver.getTitle();
+            ReportManager.reportInfo("Page title fetched: " + title);
+            return title;
+        } catch (Exception e) {
+            ReportManager.reportFailure("Failed to fetch page title: " + e.getMessage());
+            throw e;
+        }
     }
 
     public WebElement getWebElement(String identifierType, String identifierValue) {
-        return switch (identifierType) {
-            case "XPATH" -> BaseTest.driver.findElement(By.xpath(identifierValue));
-            case "CSS" -> BaseTest.driver.findElement(By.cssSelector(identifierValue));
-            case "ID" -> BaseTest.driver.findElement(By.id(identifierValue));
-            case "NAME" -> BaseTest.driver.findElement(By.name(identifierValue));
-            case "CLASS" -> BaseTest.driver.findElement(By.className(identifierValue));
-            case "LINK" -> BaseTest.driver.findElement(By.linkText(identifierValue));
-            case "TAGNAME" -> BaseTest.driver.findElement(By.tagName(identifierValue));
-            default -> null;
-        };
+        WebElement el;
+
+        try {
+            switch (identifierType) {
+                case "XPATH" -> {
+                    el = BaseTest.driver.findElement(By.xpath(identifierValue));
+                    ReportManager.reportInfo("Element fetched using XPATH: " + identifierValue);
+                }
+                case "CSS" -> {
+                    el = BaseTest.driver.findElement(By.cssSelector(identifierValue));
+                    ReportManager.reportInfo("Element fetched using CSS: " + identifierValue);
+                }
+                case "ID" -> {
+                    el = BaseTest.driver.findElement(By.id(identifierValue));
+                    ReportManager.reportInfo("Element fetched using ID: " + identifierValue);
+                }
+                case "NAME" -> {
+                    el = BaseTest.driver.findElement(By.name(identifierValue));
+                    ReportManager.reportInfo("Element fetched using NAME: " + identifierValue);
+                }
+                case "CLASS" -> {
+                    el = BaseTest.driver.findElement(By.className(identifierValue));
+                    ReportManager.reportInfo("Element fetched using CLASS: " + identifierValue);
+                }
+                case "LINK" -> {
+                    el = BaseTest.driver.findElement(By.linkText(identifierValue));
+                    ReportManager.reportInfo("Element fetched using LINK: " + identifierValue);
+                }
+                case "TAGNAME" -> {
+                    el = BaseTest.driver.findElement(By.tagName(identifierValue));
+                    ReportManager.reportInfo("Element fetched using TAGNAME: " + identifierValue);
+                }
+                default -> {
+                    ReportManager.reportFailure("Invalid identifier type: " + identifierType);
+                    throw new IllegalArgumentException("Invalid identifier type: " + identifierType);
+                }
+            }
+        } catch (Exception e) {
+            ReportManager.reportFailure("Failed to fetch element: " + e.getMessage());
+            throw e;
+        }
+
+        return el;
     }
 
     public List<WebElement> getWebElements(String identifierType, String identifierValue) {
-        return switch (identifierType) {
-            case "XPATH" -> BaseTest.driver.findElements(By.xpath(identifierValue));
-            case "CSS" -> BaseTest.driver.findElements(By.cssSelector(identifierValue));
-            case "ID" -> BaseTest.driver.findElements(By.id(identifierValue));
-            case "NAME" -> BaseTest.driver.findElements(By.name(identifierValue));
-            case "CLASS" -> BaseTest.driver.findElements(By.className(identifierValue));
-            case "LINK" -> BaseTest.driver.findElements(By.linkText(identifierValue));
-            case "TAGNAME" -> BaseTest.driver.findElements(By.tagName(identifierValue));
-            default -> null;
-        };
+        List<WebElement> el;
+
+        try {
+            switch (identifierType) {
+                case "XPATH" -> {
+                    el = BaseTest.driver.findElements(By.xpath(identifierValue));
+                    ReportManager.reportInfo("Elements fetched using XPATH: " + identifierValue);
+                }
+                case "CSS" -> {
+                    el = BaseTest.driver.findElements(By.cssSelector(identifierValue));
+                    ReportManager.reportInfo("Elements fetched using CSS: " + identifierValue);
+                }
+                case "ID" -> {
+                    el = BaseTest.driver.findElements(By.id(identifierValue));
+                    ReportManager.reportInfo("Elements fetched using ID: " + identifierValue);
+                }
+                case "NAME" -> {
+                    el = BaseTest.driver.findElements(By.name(identifierValue));
+                    ReportManager.reportInfo("Elements fetched using NAME: " + identifierValue);
+                }
+                case "CLASS" -> {
+                    el = BaseTest.driver.findElements(By.className(identifierValue));
+                    ReportManager.reportInfo("Elements fetched using CLASS: " + identifierValue);
+                }
+                case "LINK" -> {
+                    el = BaseTest.driver.findElements(By.linkText(identifierValue));
+                    ReportManager.reportInfo("Elements fetched using LINK: " + identifierValue);
+                }
+                case "TAGNAME" -> {
+                    el = BaseTest.driver.findElements(By.tagName(identifierValue));
+                    ReportManager.reportInfo("Elements fetched using TAGNAME: " + identifierValue);
+                }
+                default -> {
+                    ReportManager.reportFailure("Invalid identifier type: " + identifierType);
+                    throw new IllegalArgumentException("Invalid identifier type: " + identifierType);
+                }
+            }
+        } catch (Exception e) {
+            ReportManager.reportFailure("Failed to fetch elements: " + e.getMessage());
+            throw e;
+        }
+
+        return el;
     }
 
 }

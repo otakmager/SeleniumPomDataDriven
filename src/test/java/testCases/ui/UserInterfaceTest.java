@@ -34,8 +34,5 @@ public class UserInterfaceTest extends BaseTest {
     @Test
     public void testSideBarSmallOnScreen() {
         events.testSidebarVisibilityOnSmallScreen();
-
-        // restore screen size
-        BaseTest.driver.manage().window().maximize();
     }
 }
