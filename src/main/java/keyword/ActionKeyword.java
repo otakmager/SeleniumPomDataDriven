@@ -1,5 +1,6 @@
 package keyword;
 
+import base.BaseTest;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import utils.ReportManager;
@@ -40,7 +41,7 @@ public class ActionKeyword {
 
     public String getValue(WebElement el, String elementName) {
         try {
-            String value = el.getDomAttribute("value");
+            String value = (String) BaseTest.js.executeScript("return arguments[0].value;", el);
             ReportManager.reportInfo("Getting value from element: " + elementName);
             return value;
         } catch (Exception e) {

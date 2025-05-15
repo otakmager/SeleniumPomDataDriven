@@ -21,7 +21,7 @@ public interface PageElements {
     String selectUnitFromXPath = "//select[@id='selectFrom']";
 
     String inputToXPath = "//input[@id='inputTo']";
-    String selectUnitToXPath = "//select[@id='selectTo]";
+    String selectUnitToXPath = "//select[@id='selectTo']";
 
     String buttonSettingXPath = "//div[@class='rightButton'][@onclick='toggleSettings(event);']";
     String settingBoxId = "settings";

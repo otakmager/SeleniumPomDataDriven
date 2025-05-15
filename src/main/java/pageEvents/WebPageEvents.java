@@ -144,7 +144,7 @@ public class WebPageEvents {
         action.sendKeys(inputDigit, digit.toString(), "Input Digit");
     }
 
-    public void testInputConverter(Boolean value1, Boolean value2, String fromUnit, String toUnit) {
+    public void testInputConverter(Double value1, Double value2, String fromUnit, String toUnit) {
         WebElement selectUnitFrom = el.getWebElement("XPATH", PageElements.selectUnitFromXPath);
         WebElement selectUnitTo = el.getWebElement("XPATH", PageElements.selectUnitToXPath);
         WebElement inputFrom = el.getWebElement("XPATH", PageElements.inputFromXPath);
@@ -156,12 +156,13 @@ public class WebPageEvents {
 
         // Input value1
         action.sendKeys(inputFrom, value1.toString(), "Input From");
+
         String resultTo = action.getValue(inputTo, "Input To");
-        validation.assertDoubleValuesEqual(value1.toString(), resultTo);
+        validation.assertDoubleValuesEqual(value2, Double.valueOf(resultTo));
 
         // Input value2
         action.sendKeys(inputTo, value2.toString(), "Input To");
         String resultFrom = action.getValue(inputFrom, "Input From");
-        validation.assertDoubleValuesEqual(value2.toString(), resultFrom);
+        validation.assertDoubleValuesEqual(value1, Double.valueOf(resultFrom));
     }
 }

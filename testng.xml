@@ -10,4 +10,10 @@
             <class name="testCases.ui.UserInterfaceTest"/>
         </classes>
     </test>
+    <test verbose="1" name="Length Converter Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testCases.length.LengthConverterTest"/>
+        </classes>
+    </test>
 </suite>
