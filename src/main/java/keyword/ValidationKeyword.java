@@ -45,4 +45,21 @@ public class ValidationKeyword {
             throw e;
         }
     }
+
+    public void assertDoubleValuesEqual(String value1, String value2) {
+        try {
+            double num1 = Double.parseDouble(value1);
+            double num2 = Double.parseDouble(value2);
+
+            Assert.assertEquals(num1, num2, 0.000001);
+            ReportManager.reportPass("Validation passed: " + value1 + " equals " + value2);
+        } catch (AssertionError e) {
+            ReportManager.reportFailure("Validation failed: " + value1 + " does not equal " + value2);
+            throw e;
+        } catch (NumberFormatException e) {
+            ReportManager.reportFailure("Invalid number format: " + e.getMessage());
+            throw e;
+        }
+    }
+
 }

@@ -35,4 +35,9 @@ public class UserInterfaceTest extends BaseTest {
     public void testSideBarSmallOnScreen() {
         events.testSidebarVisibilityOnSmallScreen();
     }
+
+    @Test
+    public void testChangeOptionDigits() {
+        events.changeOptionDigits(4);
+    }
 }

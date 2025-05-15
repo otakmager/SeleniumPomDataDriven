@@ -124,4 +124,44 @@ public class WebPageEvents {
         // Restore screen dimension
         BaseTest.driver.manage().window().maximize();
     }
+
+    public void changeOptionDigits(Integer digit) {
+        WebElement settingButton = el.getWebElement("XPATH", PageElements.buttonSettingXPath);
+        WebElement settingBox = el.getWebElement("ID", PageElements.settingBoxId);
+        WebElement inputDigit = el.getWebElement("ID", PageElements.inputDigitId);
+
+        // Validate visibility
+        validation.assertElementVisible(settingButton, "Setting Button");
+        validation.assertElementNotVisible(settingBox, "Setting Box");
+        validation.assertElementNotVisible(inputDigit, "Input Digit");
+
+        // Click to show setting box
+        action.click(settingButton, "Setting Button");
+        validation.assertElementVisible(settingBox, "Setting Box");
+        validation.assertElementVisible(inputDigit, "Input Digit");
+
+        // Input digit
+        action.sendKeys(inputDigit, digit.toString(), "Input Digit");
+    }
+
+    public void testInputConverter(Boolean value1, Boolean value2, String fromUnit, String toUnit) {
+        WebElement selectUnitFrom = el.getWebElement("XPATH", PageElements.selectUnitFromXPath);
+        WebElement selectUnitTo = el.getWebElement("XPATH", PageElements.selectUnitToXPath);
+        WebElement inputFrom = el.getWebElement("XPATH", PageElements.inputFromXPath);
+        WebElement inputTo = el.getWebElement("XPATH", PageElements.inputToXPath);
+
+        // Change Unit
+        action.selectByVisibleText(selectUnitFrom, fromUnit, "Select From Unit");
+        action.selectByVisibleText(selectUnitTo, toUnit, "Select To Unit");
+
+        // Input value1
+        action.sendKeys(inputFrom, value1.toString(), "Input From");
+        String resultTo = action.getValue(inputTo, "Input To");
+        validation.assertDoubleValuesEqual(value1.toString(), resultTo);
+
+        // Input value2
+        action.sendKeys(inputTo, value2.toString(), "Input To");
+        String resultFrom = action.getValue(inputFrom, "Input From");
+        validation.assertDoubleValuesEqual(value2.toString(), resultFrom);
+    }
 }

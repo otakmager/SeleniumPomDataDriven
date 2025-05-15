@@ -1,6 +1,7 @@
 package keyword;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import utils.ReportManager;
 
 public class ActionKeyword {
@@ -33,6 +34,28 @@ public class ActionKeyword {
             return text;
         } catch (Exception e) {
             ReportManager.reportFailure("Failed to get text from element: " + elementName + " - " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public String getValue(WebElement el, String elementName) {
+        try {
+            String value = el.getDomAttribute("value");
+            ReportManager.reportInfo("Getting value from element: " + elementName);
+            return value;
+        } catch (Exception e) {
+            ReportManager.reportFailure("Failed to get value from element: " + elementName + " - " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public void selectByVisibleText(WebElement el, String text, String elementName) {
+        try {
+            Select select = new Select(el);
+            select.selectByVisibleText(text);
+            ReportManager.reportInfo("Successfully selected option: " + text + " on " + elementName);
+        } catch (Exception e) {
+            ReportManager.reportFailure("Failed to select option: " + text + " on " + elementName + " - " + e.getMessage());
             throw e;
         }
     }
