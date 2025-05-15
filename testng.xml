@@ -22,4 +22,10 @@
             <class name="testCases.mass.MassConverterTest"/>
         </classes>
     </test>
+    <test verbose="1" name="Time Converter Test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="testCases.time.TimeConverterTest"/>
+        </classes>
+    </test>
 </suite>
