@@ -194,3 +194,101 @@
 2025-05-16 11:08:57 [main] INFO  utils.ElementFetch - Element fetched using ID: quantity-title
 2025-05-16 11:08:57 [main] INFO  keyword.ActionKeyword - Getting text from element: Converter Title Header
 2025-05-16 11:08:57 [main] INFO  keyword.ValidationKeyword - Validation passed: expected 'Convert Mass' and found 'Convert Mass'
+2025-05-16 11:12:30 [main] INFO  utils.ExcelUtils - Loaded Excel file and sheet: time
+2025-05-16 11:12:30 [main] INFO  utils.ExcelUtils - Found empty first cell in row 5, stopping read
+2025-05-16 11:12:30 [main] INFO  utils.ExcelUtils - Finished extracting data from Excel sheet
+2025-05-16 11:12:30 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.time.TimeConverterTest.testConverter ==================
+
+2025-05-16 11:12:33 [main] INFO  base.BaseTest - Test data: 1.57, 94.2, hours [h], minutes [min]
+2025-05-16 11:12:33 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //div[@class='rightButton'][@onclick='toggleSettings(event);']
+2025-05-16 11:12:33 [main] INFO  utils.ElementFetch - Element fetched using ID: settings
+2025-05-16 11:12:33 [main] INFO  utils.ElementFetch - Element fetched using ID: inputOptionsDigits
+2025-05-16 11:12:33 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Button
+2025-05-16 11:12:33 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Setting Box
+2025-05-16 11:12:33 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Input Digit
+2025-05-16 11:12:34 [main] INFO  keyword.ActionKeyword - Clicking on element: Setting Button
+2025-05-16 11:12:34 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Box
+2025-05-16 11:12:34 [main] INFO  keyword.ValidationKeyword - Element visible: Input Digit
+2025-05-16 11:12:34 [main] INFO  keyword.ActionKeyword - Sending keys: 5 to element: Input Digit
+2025-05-16 11:12:34 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectFrom']
+2025-05-16 11:12:34 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectTo']
+2025-05-16 11:12:34 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputFrom']
+2025-05-16 11:12:34 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputTo']
+2025-05-16 11:12:35 [main] INFO  keyword.ActionKeyword - Successfully selected option: hours [h] on Select From Unit
+2025-05-16 11:12:35 [main] INFO  keyword.ActionKeyword - Successfully selected option: minutes [min] on Select To Unit
+2025-05-16 11:12:36 [main] INFO  keyword.ActionKeyword - Sending keys: 1.57 to element: Input From
+2025-05-16 11:12:36 [main] INFO  keyword.ActionKeyword - Getting value from element: Input To
+2025-05-16 11:12:36 [main] INFO  keyword.ValidationKeyword - Validation passed: 94.2 equals 94.2
+2025-05-16 11:12:36 [main] INFO  keyword.ActionKeyword - Sending keys: 94.2 to element: Input To
+2025-05-16 11:12:36 [main] INFO  keyword.ActionKeyword - Getting value from element: Input From
+2025-05-16 11:12:36 [main] INFO  keyword.ValidationKeyword - Validation passed: 1.57 equals 1.57
+2025-05-16 11:12:36 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.time.TimeConverterTest.testConverter ==================
+
+2025-05-16 11:12:36 [main] INFO  base.BaseTest - Test data: 2, 14, weeks, days [d]
+2025-05-16 11:12:36 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //div[@class='rightButton'][@onclick='toggleSettings(event);']
+2025-05-16 11:12:36 [main] INFO  utils.ElementFetch - Element fetched using ID: settings
+2025-05-16 11:12:36 [main] INFO  utils.ElementFetch - Element fetched using ID: inputOptionsDigits
+2025-05-16 11:12:36 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Button
+2025-05-16 11:12:37 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Setting Box
+2025-05-16 11:12:37 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Input Digit
+2025-05-16 11:12:37 [main] INFO  keyword.ActionKeyword - Clicking on element: Setting Button
+2025-05-16 11:12:37 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Box
+2025-05-16 11:12:37 [main] INFO  keyword.ValidationKeyword - Element visible: Input Digit
+2025-05-16 11:12:37 [main] INFO  keyword.ActionKeyword - Sending keys: 5 to element: Input Digit
+2025-05-16 11:12:37 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectFrom']
+2025-05-16 11:12:37 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectTo']
+2025-05-16 11:12:37 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputFrom']
+2025-05-16 11:12:37 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputTo']
+2025-05-16 11:12:37 [main] INFO  keyword.ActionKeyword - Successfully selected option: weeks on Select From Unit
+2025-05-16 11:12:38 [main] INFO  keyword.ActionKeyword - Successfully selected option: days [d] on Select To Unit
+2025-05-16 11:12:38 [main] INFO  keyword.ActionKeyword - Sending keys: 2.0 to element: Input From
+2025-05-16 11:12:38 [main] INFO  keyword.ActionKeyword - Getting value from element: Input To
+2025-05-16 11:12:38 [main] INFO  keyword.ValidationKeyword - Validation passed: 14.0 equals 14.0
+2025-05-16 11:12:38 [main] INFO  keyword.ActionKeyword - Sending keys: 14.0 to element: Input To
+2025-05-16 11:12:38 [main] INFO  keyword.ActionKeyword - Getting value from element: Input From
+2025-05-16 11:12:38 [main] INFO  keyword.ValidationKeyword - Validation passed: 2.0 equals 2.0
+2025-05-16 11:12:38 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.time.TimeConverterTest.testConverter ==================
+
+2025-05-16 11:12:38 [main] INFO  base.BaseTest - Test data: 0.25, 30, decades, months (Common)
+2025-05-16 11:12:38 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //div[@class='rightButton'][@onclick='toggleSettings(event);']
+2025-05-16 11:12:38 [main] INFO  utils.ElementFetch - Element fetched using ID: settings
+2025-05-16 11:12:38 [main] INFO  utils.ElementFetch - Element fetched using ID: inputOptionsDigits
+2025-05-16 11:12:38 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Button
+2025-05-16 11:12:38 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Setting Box
+2025-05-16 11:12:39 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Input Digit
+2025-05-16 11:12:39 [main] INFO  keyword.ActionKeyword - Clicking on element: Setting Button
+2025-05-16 11:12:39 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Box
+2025-05-16 11:12:39 [main] INFO  keyword.ValidationKeyword - Element visible: Input Digit
+2025-05-16 11:12:39 [main] INFO  keyword.ActionKeyword - Sending keys: 5 to element: Input Digit
+2025-05-16 11:12:39 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectFrom']
+2025-05-16 11:12:39 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectTo']
+2025-05-16 11:12:39 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputFrom']
+2025-05-16 11:12:39 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputTo']
+2025-05-16 11:12:39 [main] INFO  keyword.ActionKeyword - Successfully selected option: decades on Select From Unit
+2025-05-16 11:12:39 [main] INFO  keyword.ActionKeyword - Successfully selected option: months (Common) on Select To Unit
+2025-05-16 11:12:40 [main] INFO  keyword.ActionKeyword - Sending keys: 0.25 to element: Input From
+2025-05-16 11:12:40 [main] INFO  keyword.ActionKeyword - Getting value from element: Input To
+2025-05-16 11:12:40 [main] INFO  keyword.ValidationKeyword - Validation passed: 30.0 equals 30.0
+2025-05-16 11:12:40 [main] INFO  keyword.ActionKeyword - Sending keys: 30.0 to element: Input To
+2025-05-16 11:12:40 [main] INFO  keyword.ActionKeyword - Getting value from element: Input From
+2025-05-16 11:12:40 [main] INFO  keyword.ValidationKeyword - Validation passed: 0.25 equals 0.25
+2025-05-16 11:12:40 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.time.TimeConverterTest.testTitle ==================
+
+2025-05-16 11:12:40 [main] INFO  utils.ElementFetch - Page title fetched: Convert Time - Unit Converter
+2025-05-16 11:12:40 [main] INFO  keyword.ValidationKeyword - Validation passed: expectedSubstring '- Unit Converter' and found 'Convert Time - Unit Converter'
+2025-05-16 11:12:40 [main] INFO  keyword.ValidationKeyword - Validation passed: expected 'Convert Time - Unit Converter' and found 'Convert Time - Unit Converter'
+2025-05-16 11:12:40 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.time.TimeConverterTest.testVerifyConverterTitleHeader ==================
+
+2025-05-16 11:12:41 [main] INFO  utils.ElementFetch - Element fetched using ID: quantity-title
+2025-05-16 11:12:41 [main] INFO  keyword.ActionKeyword - Getting text from element: Converter Title Header
+2025-05-16 11:12:41 [main] INFO  keyword.ValidationKeyword - Validation passed: expected 'Convert Time' and found 'Convert Time'

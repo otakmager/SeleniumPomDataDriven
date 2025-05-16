@@ -18,4 +18,11 @@ public class ExcelDataProvider {
         ExcelUtils excel = new ExcelUtils(filePath, "mass");
         return excel.getSheetDataAsArray(2);
     }
+
+    @DataProvider(name = "timeData")
+    public Object[][] getTimeData() {
+        String filePath = basePath + "datasets.xlsx";
+        ExcelUtils excel = new ExcelUtils(filePath, "time");
+        return excel.getSheetDataAsArray(2);
+    }
 }

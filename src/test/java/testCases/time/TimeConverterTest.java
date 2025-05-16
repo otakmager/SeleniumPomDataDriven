@@ -4,6 +4,8 @@ import base.BaseTest;
 import org.testng.annotations.Test;
 import pageEvents.WebPageEvents;
 import utils.Constants;
+import utils.ExcelDataProvider;
+import utils.Utils;
 
 public class TimeConverterTest extends BaseTest {
     private final String title = "Convert Time";
@@ -24,15 +26,18 @@ public class TimeConverterTest extends BaseTest {
         events.verifyConverterTitleHeader(title);
     }
 
-    @Test
-    public void testConverter() {
-        Double value1 = 1.57;
-        Double value2 = 94.2;
-        String fromUnit = "hours [h]";
-        String toUnit = "minutes [min]";
+    @Test(dataProvider = "timeData", dataProviderClass = ExcelDataProvider.class)
+    public void testConverter(String value1, String fromUnit, String value2, String toUnit) {
+        // Create input log & report
+        Utils.infoInputTest(logger, value1, fromUnit, value2, toUnit);
 
+        // Parse data
+        Double value1New = Utils.parseLocalizedNumber(value1);
+        Double value2New = Utils.parseLocalizedNumber(value2);
+
+        // action
         events.changeOptionDigits(Constants.maxDigits);
-        events.testInputConverter(value1, value2, fromUnit, toUnit);
+        events.testInputConverter(value1New, value2New, fromUnit, toUnit);
     }
 
 }
