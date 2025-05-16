@@ -96,3 +96,101 @@
 2025-05-16 11:03:09 [main] INFO  utils.ElementFetch - Element fetched using ID: quantity-title
 2025-05-16 11:03:09 [main] INFO  keyword.ActionKeyword - Getting text from element: Converter Title Header
 2025-05-16 11:03:09 [main] INFO  keyword.ValidationKeyword - Validation passed: expected 'Convert Length' and found 'Convert Length'
+2025-05-16 11:08:46 [main] INFO  utils.ExcelUtils - Loaded Excel file and sheet: mass
+2025-05-16 11:08:47 [main] INFO  utils.ExcelUtils - Found empty first cell in row 5, stopping read
+2025-05-16 11:08:47 [main] INFO  utils.ExcelUtils - Finished extracting data from Excel sheet
+2025-05-16 11:08:47 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.mass.MassConverterTest.testConverter ==================
+
+2025-05-16 11:08:50 [main] INFO  base.BaseTest - Test data: 325.75, 325750, kilograms [kg], grams [g]
+2025-05-16 11:08:50 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //div[@class='rightButton'][@onclick='toggleSettings(event);']
+2025-05-16 11:08:50 [main] INFO  utils.ElementFetch - Element fetched using ID: settings
+2025-05-16 11:08:50 [main] INFO  utils.ElementFetch - Element fetched using ID: inputOptionsDigits
+2025-05-16 11:08:50 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Button
+2025-05-16 11:08:50 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Setting Box
+2025-05-16 11:08:50 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Input Digit
+2025-05-16 11:08:50 [main] INFO  keyword.ActionKeyword - Clicking on element: Setting Button
+2025-05-16 11:08:50 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Box
+2025-05-16 11:08:50 [main] INFO  keyword.ValidationKeyword - Element visible: Input Digit
+2025-05-16 11:08:51 [main] INFO  keyword.ActionKeyword - Sending keys: 5 to element: Input Digit
+2025-05-16 11:08:51 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectFrom']
+2025-05-16 11:08:51 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectTo']
+2025-05-16 11:08:51 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputFrom']
+2025-05-16 11:08:51 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputTo']
+2025-05-16 11:08:51 [main] INFO  keyword.ActionKeyword - Successfully selected option: kilograms [kg] on Select From Unit
+2025-05-16 11:08:51 [main] INFO  keyword.ActionKeyword - Successfully selected option: grams [g] on Select To Unit
+2025-05-16 11:08:52 [main] INFO  keyword.ActionKeyword - Sending keys: 325.75 to element: Input From
+2025-05-16 11:08:52 [main] INFO  keyword.ActionKeyword - Getting value from element: Input To
+2025-05-16 11:08:52 [main] INFO  keyword.ValidationKeyword - Validation passed: 325750.0 equals 325750.0
+2025-05-16 11:08:52 [main] INFO  keyword.ActionKeyword - Sending keys: 325750.0 to element: Input To
+2025-05-16 11:08:52 [main] INFO  keyword.ActionKeyword - Getting value from element: Input From
+2025-05-16 11:08:52 [main] INFO  keyword.ValidationKeyword - Validation passed: 325.75 equals 325.75
+2025-05-16 11:08:52 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.mass.MassConverterTest.testConverter ==================
+
+2025-05-16 11:08:52 [main] INFO  base.BaseTest - Test data: 1, 0.2, carats (metric) [CD], grams [g]
+2025-05-16 11:08:52 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //div[@class='rightButton'][@onclick='toggleSettings(event);']
+2025-05-16 11:08:52 [main] INFO  utils.ElementFetch - Element fetched using ID: settings
+2025-05-16 11:08:53 [main] INFO  utils.ElementFetch - Element fetched using ID: inputOptionsDigits
+2025-05-16 11:08:53 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Button
+2025-05-16 11:08:53 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Setting Box
+2025-05-16 11:08:53 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Input Digit
+2025-05-16 11:08:53 [main] INFO  keyword.ActionKeyword - Clicking on element: Setting Button
+2025-05-16 11:08:53 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Box
+2025-05-16 11:08:53 [main] INFO  keyword.ValidationKeyword - Element visible: Input Digit
+2025-05-16 11:08:53 [main] INFO  keyword.ActionKeyword - Sending keys: 5 to element: Input Digit
+2025-05-16 11:08:53 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectFrom']
+2025-05-16 11:08:53 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectTo']
+2025-05-16 11:08:53 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputFrom']
+2025-05-16 11:08:53 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputTo']
+2025-05-16 11:08:53 [main] INFO  keyword.ActionKeyword - Successfully selected option: carats (metric) [CD] on Select From Unit
+2025-05-16 11:08:54 [main] INFO  keyword.ActionKeyword - Successfully selected option: grams [g] on Select To Unit
+2025-05-16 11:08:54 [main] INFO  keyword.ActionKeyword - Sending keys: 1.0 to element: Input From
+2025-05-16 11:08:54 [main] INFO  keyword.ActionKeyword - Getting value from element: Input To
+2025-05-16 11:08:54 [main] INFO  keyword.ValidationKeyword - Validation passed: 0.2 equals 0.2
+2025-05-16 11:08:54 [main] INFO  keyword.ActionKeyword - Sending keys: 0.2 to element: Input To
+2025-05-16 11:08:54 [main] INFO  keyword.ActionKeyword - Getting value from element: Input From
+2025-05-16 11:08:54 [main] INFO  keyword.ValidationKeyword - Validation passed: 1.0 equals 1.0
+2025-05-16 11:08:54 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.mass.MassConverterTest.testConverter ==================
+
+2025-05-16 11:08:54 [main] INFO  base.BaseTest - Test data: 0.51249999999999996, 512.5, milligrams [mg], micrograms [µg]
+2025-05-16 11:08:54 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //div[@class='rightButton'][@onclick='toggleSettings(event);']
+2025-05-16 11:08:54 [main] INFO  utils.ElementFetch - Element fetched using ID: settings
+2025-05-16 11:08:54 [main] INFO  utils.ElementFetch - Element fetched using ID: inputOptionsDigits
+2025-05-16 11:08:54 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Button
+2025-05-16 11:08:54 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Setting Box
+2025-05-16 11:08:54 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Input Digit
+2025-05-16 11:08:55 [main] INFO  keyword.ActionKeyword - Clicking on element: Setting Button
+2025-05-16 11:08:55 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Box
+2025-05-16 11:08:55 [main] INFO  keyword.ValidationKeyword - Element visible: Input Digit
+2025-05-16 11:08:55 [main] INFO  keyword.ActionKeyword - Sending keys: 5 to element: Input Digit
+2025-05-16 11:08:55 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectFrom']
+2025-05-16 11:08:55 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectTo']
+2025-05-16 11:08:55 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputFrom']
+2025-05-16 11:08:55 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputTo']
+2025-05-16 11:08:55 [main] INFO  keyword.ActionKeyword - Successfully selected option: milligrams [mg] on Select From Unit
+2025-05-16 11:08:56 [main] INFO  keyword.ActionKeyword - Successfully selected option: micrograms [µg] on Select To Unit
+2025-05-16 11:08:56 [main] INFO  keyword.ActionKeyword - Sending keys: 0.5125 to element: Input From
+2025-05-16 11:08:56 [main] INFO  keyword.ActionKeyword - Getting value from element: Input To
+2025-05-16 11:08:56 [main] INFO  keyword.ValidationKeyword - Validation passed: 512.5 equals 512.5
+2025-05-16 11:08:56 [main] INFO  keyword.ActionKeyword - Sending keys: 512.5 to element: Input To
+2025-05-16 11:08:56 [main] INFO  keyword.ActionKeyword - Getting value from element: Input From
+2025-05-16 11:08:56 [main] INFO  keyword.ValidationKeyword - Validation passed: 0.5125 equals 0.5125
+2025-05-16 11:08:56 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.mass.MassConverterTest.testTitle ==================
+
+2025-05-16 11:08:57 [main] INFO  utils.ElementFetch - Page title fetched: Convert Mass - Unit Converter
+2025-05-16 11:08:57 [main] INFO  keyword.ValidationKeyword - Validation passed: expectedSubstring '- Unit Converter' and found 'Convert Mass - Unit Converter'
+2025-05-16 11:08:57 [main] INFO  keyword.ValidationKeyword - Validation passed: expected 'Convert Mass - Unit Converter' and found 'Convert Mass - Unit Converter'
+2025-05-16 11:08:57 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.mass.MassConverterTest.testVerifyConverterTitleHeader ==================
+
+2025-05-16 11:08:57 [main] INFO  utils.ElementFetch - Element fetched using ID: quantity-title
+2025-05-16 11:08:57 [main] INFO  keyword.ActionKeyword - Getting text from element: Converter Title Header
+2025-05-16 11:08:57 [main] INFO  keyword.ValidationKeyword - Validation passed: expected 'Convert Mass' and found 'Convert Mass'

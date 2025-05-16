@@ -11,4 +11,11 @@ public class ExcelDataProvider {
         ExcelUtils excel = new ExcelUtils(filePath, "length");
         return excel.getSheetDataAsArray(2);
     }
+
+    @DataProvider(name = "massData")
+    public Object[][] getMassData() {
+        String filePath = basePath + "datasets.xlsx";
+        ExcelUtils excel = new ExcelUtils(filePath, "mass");
+        return excel.getSheetDataAsArray(2);
+    }
 }

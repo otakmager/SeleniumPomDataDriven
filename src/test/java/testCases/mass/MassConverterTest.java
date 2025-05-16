@@ -4,6 +4,8 @@ import base.BaseTest;
 import org.testng.annotations.Test;
 import pageEvents.WebPageEvents;
 import utils.Constants;
+import utils.ExcelDataProvider;
+import utils.Utils;
 
 public class MassConverterTest extends BaseTest {
     private final String title = "Convert Mass";
@@ -24,15 +26,18 @@ public class MassConverterTest extends BaseTest {
         events.verifyConverterTitleHeader(title);
     }
 
-    @Test
-    public void testConverter() {
-        Double value1 = 325.75;
-        Double value2 = 325750.0;
-        String fromUnit = "grams [g]";
-        String toUnit = "milligrams [mg]";
+    @Test(dataProvider = "massData", dataProviderClass = ExcelDataProvider.class)
+    public void testConverter(String value1, String fromUnit, String value2, String toUnit) {
+        // Create input log & report
+        Utils.infoInputTest(logger, value1, fromUnit, value2, toUnit);
 
+        // Parse data
+        Double value1New = Utils.parseLocalizedNumber(value1);
+        Double value2New = Utils.parseLocalizedNumber(value2);
+
+        // action
         events.changeOptionDigits(Constants.maxDigits);
-        events.testInputConverter(value1, value2, fromUnit, toUnit);
+        events.testInputConverter(value1New, value2New, fromUnit, toUnit);
     }
 
 }
