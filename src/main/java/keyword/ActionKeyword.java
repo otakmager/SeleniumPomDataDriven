@@ -1,18 +1,24 @@
 package keyword;
 
 import base.BaseTest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import utils.ReportManager;
+import utils.Utils;
 
 public class ActionKeyword {
+    private static final Logger logger = LogManager.getLogger(ActionKeyword.class);
+    private String message;
 
     public void click(WebElement el, String elementName) {
         try {
             el.click();
-            ReportManager.reportInfo("Clicking on element: " + elementName);
+            message = "Clicking on element: " + elementName;
+            Utils.createReportInfo(logger, message);
         } catch (Exception e) {
-            ReportManager.reportFailure("Failed to click on element: " + elementName + " - " + e.getMessage());
+            message = "Failed to click on element: " + elementName + " - " + e.getMessage();
+            Utils.createReportFailure(logger, message);
             throw e;
         }
     }
@@ -21,9 +27,11 @@ public class ActionKeyword {
         try {
             el.clear();
             el.sendKeys(keys);
-            ReportManager.reportInfo("Sending keys: " + keys + " to element: " + elementName);
+            message = "Sending keys: " + keys + " to element: " + elementName;
+            Utils.createReportInfo(logger, message);
         } catch (Exception e) {
-            ReportManager.reportFailure("Failed to send keys: " + keys + " to element: " + elementName + " - " + e.getMessage());
+            message = "Failed to send keys: " + keys + " to element: " + elementName + " - " + e.getMessage();
+            Utils.createReportFailure(logger, message);
             throw e;
         }
     }
@@ -31,10 +39,12 @@ public class ActionKeyword {
     public String getText(WebElement el, String elementName) {
         try {
             String text = el.getText();
-            ReportManager.reportInfo("Getting text from element: " + elementName);
+            message = "Getting text from element: " + elementName;
+            Utils.createReportInfo(logger, message);
             return text;
         } catch (Exception e) {
-            ReportManager.reportFailure("Failed to get text from element: " + elementName + " - " + e.getMessage());
+            message = "Failed to get text from element: " + elementName + " - " + e.getMessage();
+            Utils.createReportFailure(logger, message);
             throw e;
         }
     }
@@ -42,10 +52,12 @@ public class ActionKeyword {
     public String getValue(WebElement el, String elementName) {
         try {
             String value = (String) BaseTest.js.executeScript("return arguments[0].value;", el);
-            ReportManager.reportInfo("Getting value from element: " + elementName);
+            message = "Getting value from element: " + elementName;
+            Utils.createReportInfo(logger, message);
             return value;
         } catch (Exception e) {
-            ReportManager.reportFailure("Failed to get value from element: " + elementName + " - " + e.getMessage());
+            message = "Failed to get value from element: " + elementName + " - " + e.getMessage();
+            Utils.createReportFailure(logger, message);
             throw e;
         }
     }
@@ -54,9 +66,11 @@ public class ActionKeyword {
         try {
             Select select = new Select(el);
             select.selectByVisibleText(text);
-            ReportManager.reportInfo("Successfully selected option: " + text + " on " + elementName);
+            message = "Successfully selected option: " + text + " on " + elementName;
+            Utils.createReportInfo(logger, message);
         } catch (Exception e) {
-            ReportManager.reportFailure("Failed to select option: " + text + " on " + elementName + " - " + e.getMessage());
+            message = "Failed to select option: " + text + " on " + elementName + " - " + e.getMessage();
+            Utils.createReportFailure(logger, message);
             throw e;
         }
     }

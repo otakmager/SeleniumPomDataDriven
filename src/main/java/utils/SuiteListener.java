@@ -22,15 +22,17 @@ public class SuiteListener implements ITestListener, IAnnotationTransformer {
 
     @Override
     public void onTestFailure(ITestResult result) {
+        String methodName = result.getMethod().getMethodName();
         String fileName = System.getProperty("user.dir") + File.separator + "screenshots" + File.separator
                 + result.getMethod().getMethodName();
         File file = ((TakesScreenshot) BaseTest.driver).getScreenshotAs(OutputType.FILE);
 
         try {
             FileUtils.copyFile(file, new File(fileName + ".png"));
+            logger.info("Screenshot captured for failed test: {}", methodName);
+            logger.info("Screenshot saved at: {}", fileName);
         } catch (IOException e) {
-            logger.error("An error occurred:");
-            logger.error(e.toString());
+            logger.error("Failed to save screenshot for test: {}", methodName, e);
         }
     }
 

@@ -1,9 +1,8 @@
 package base;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,11 +12,13 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import utils.Constants;
 import utils.ReportManager;
+import utils.Utils;
 
 import java.lang.reflect.Method;
 import java.time.Duration;
 
 public class BaseTest {
+    protected static final Logger logger = LogManager.getLogger(BaseTest.class);
     public static WebDriver driver;
     public static JavascriptExecutor js;
 
@@ -35,8 +36,9 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    public void beforeMethod(Method testMethod) {
+    public void beforeMethod(Method testMethod, ITestResult result) {
         ReportManager.createTest(testMethod.getName());
+        Utils.logTestStart(logger, result);
         driver.get(getUrl());
     }
 

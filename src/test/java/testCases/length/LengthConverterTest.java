@@ -4,15 +4,12 @@ import base.BaseTest;
 import org.testng.annotations.Test;
 import pageEvents.WebPageEvents;
 import utils.Constants;
+import utils.ExcelDataProvider;
+import utils.Utils;
 
 public class LengthConverterTest extends BaseTest {
     private final String title = "Convert Length";
     WebPageEvents events = new WebPageEvents();
-
-    @Override
-    protected String getUrl() {
-        return Constants.lengthConverterUrl;
-    }
 
     @Test
     public void testTitle() {
@@ -24,15 +21,23 @@ public class LengthConverterTest extends BaseTest {
         events.verifyConverterTitleHeader(title);
     }
 
-    @Test
-    public void testConverter() {
-        Double value1 = 12.500000;
-        Double value2 = 12500.0;
-        String fromUnit = "kilometers [km]";
-        String toUnit = "meters [m]";
+    @Override
+    protected String getUrl() {
+        return Constants.lengthConverterUrl;
+    }
 
+    @Test(dataProvider = "lengthData", dataProviderClass = ExcelDataProvider.class)
+    public void testConverter(String value1, String fromUnit, String value2, String toUnit) {
+        // Create input log & report
+        Utils.infoInputTest(logger, value1, fromUnit, value2, toUnit);
+
+        // Parse data
+        Double value1New = Utils.parseLocalizedNumber(value1);
+        Double value2New = Utils.parseLocalizedNumber(value2);
+
+        // action
         events.changeOptionDigits(Constants.maxDigits);
-        events.testInputConverter(value1, value2, fromUnit, toUnit);
+        events.testInputConverter(value1New, value2New, fromUnit, toUnit);
     }
 
 }

@@ -6,5 +6,5 @@ public interface Constants {
     String lengthConverterUrl = baseUrl + "length.htm";
     String timeConverterUrl = baseUrl + "time.htm";
 
-    Integer maxDigits = 2;
+    Integer maxDigits = 5;
 }

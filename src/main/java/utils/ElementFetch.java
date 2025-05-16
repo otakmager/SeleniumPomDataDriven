@@ -1,20 +1,26 @@
 package utils;
 
 import base.BaseTest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
 public class ElementFetch {
+    private static final Logger logger = LogManager.getLogger(ElementFetch.class);
+    private String message;
 
     public String getPageTitle() {
         try {
             String title = BaseTest.driver.getTitle();
-            ReportManager.reportInfo("Page title fetched: " + title);
+            message = "Page title fetched: " + title;
+            Utils.createReportInfo(logger, message);
             return title;
         } catch (Exception e) {
-            ReportManager.reportFailure("Failed to fetch page title: " + e.getMessage());
+            message = "Failed to fetch page title: " + e.getMessage();
+            Utils.createReportFailure(logger, message);
             throw e;
         }
     }
@@ -26,39 +32,48 @@ public class ElementFetch {
             switch (identifierType) {
                 case "XPATH" -> {
                     el = BaseTest.driver.findElement(By.xpath(identifierValue));
-                    ReportManager.reportInfo("Element fetched using XPATH: " + identifierValue);
+                    message = "Element fetched using XPATH: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "CSS" -> {
                     el = BaseTest.driver.findElement(By.cssSelector(identifierValue));
-                    ReportManager.reportInfo("Element fetched using CSS: " + identifierValue);
+                    message = "Element fetched using CSS: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "ID" -> {
                     el = BaseTest.driver.findElement(By.id(identifierValue));
-                    ReportManager.reportInfo("Element fetched using ID: " + identifierValue);
+                    message = "Element fetched using ID: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "NAME" -> {
                     el = BaseTest.driver.findElement(By.name(identifierValue));
-                    ReportManager.reportInfo("Element fetched using NAME: " + identifierValue);
+                    message = "Element fetched using NAME: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "CLASS" -> {
                     el = BaseTest.driver.findElement(By.className(identifierValue));
-                    ReportManager.reportInfo("Element fetched using CLASS: " + identifierValue);
+                    message = "Element fetched using CLASS: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "LINK" -> {
                     el = BaseTest.driver.findElement(By.linkText(identifierValue));
-                    ReportManager.reportInfo("Element fetched using LINK: " + identifierValue);
+                    message = "Element fetched using LINK: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "TAGNAME" -> {
                     el = BaseTest.driver.findElement(By.tagName(identifierValue));
-                    ReportManager.reportInfo("Element fetched using TAGNAME: " + identifierValue);
+                    message = "Element fetched using TAGNAME: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 default -> {
-                    ReportManager.reportFailure("Invalid identifier type: " + identifierType);
+                    message = "Invalid identifier type: " + identifierType;
+                    Utils.createReportFailure(logger, message);
                     throw new IllegalArgumentException("Invalid identifier type: " + identifierType);
                 }
             }
         } catch (Exception e) {
-            ReportManager.reportFailure("Failed to fetch element: " + e.getMessage());
+            message = "Invalid identifier type: " + identifierType;
+            Utils.createReportFailure(logger, message);
             throw e;
         }
 
@@ -72,39 +87,48 @@ public class ElementFetch {
             switch (identifierType) {
                 case "XPATH" -> {
                     el = BaseTest.driver.findElements(By.xpath(identifierValue));
-                    ReportManager.reportInfo("Elements fetched using XPATH: " + identifierValue);
+                    message = "Elements fetched using XPATH: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "CSS" -> {
                     el = BaseTest.driver.findElements(By.cssSelector(identifierValue));
-                    ReportManager.reportInfo("Elements fetched using CSS: " + identifierValue);
+                    message = "Elements fetched using CSS: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "ID" -> {
                     el = BaseTest.driver.findElements(By.id(identifierValue));
-                    ReportManager.reportInfo("Elements fetched using ID: " + identifierValue);
+                    message = "Elements fetched using ID: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "NAME" -> {
                     el = BaseTest.driver.findElements(By.name(identifierValue));
-                    ReportManager.reportInfo("Elements fetched using NAME: " + identifierValue);
+                    message = "Elements fetched using NAME: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "CLASS" -> {
                     el = BaseTest.driver.findElements(By.className(identifierValue));
-                    ReportManager.reportInfo("Elements fetched using CLASS: " + identifierValue);
+                    message = "Elements fetched using CLASS: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "LINK" -> {
                     el = BaseTest.driver.findElements(By.linkText(identifierValue));
-                    ReportManager.reportInfo("Elements fetched using LINK: " + identifierValue);
+                    message = "Elements fetched using LINK: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 case "TAGNAME" -> {
                     el = BaseTest.driver.findElements(By.tagName(identifierValue));
-                    ReportManager.reportInfo("Elements fetched using TAGNAME: " + identifierValue);
+                    message = "Elements fetched using TAGNAME: " + identifierValue;
+                    Utils.createReportInfo(logger, message);
                 }
                 default -> {
-                    ReportManager.reportFailure("Invalid identifier type: " + identifierType);
+                    message = "Invalid identifier type: " + identifierType;
+                    Utils.createReportFailure(logger, message);
                     throw new IllegalArgumentException("Invalid identifier type: " + identifierType);
                 }
             }
         } catch (Exception e) {
-            ReportManager.reportFailure("Failed to fetch elements: " + e.getMessage());
+            message = "Invalid identifier type: " + identifierType;
+            Utils.createReportFailure(logger, message);
             throw e;
         }
 

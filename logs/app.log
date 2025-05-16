@@ -1,0 +1,98 @@
+2025-05-16 11:02:57 [main] INFO  utils.ExcelUtils - Loaded Excel file and sheet: length
+2025-05-16 11:02:57 [main] INFO  utils.ExcelUtils - Found empty first cell in row 5, stopping read
+2025-05-16 11:02:57 [main] INFO  utils.ExcelUtils - Finished extracting data from Excel sheet
+2025-05-16 11:02:57 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.length.LengthConverterTest.testConverter ==================
+
+2025-05-16 11:03:02 [main] INFO  base.BaseTest - Test data: 12.5, 12500, kilometers [km], meters [m]
+2025-05-16 11:03:02 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //div[@class='rightButton'][@onclick='toggleSettings(event);']
+2025-05-16 11:03:02 [main] INFO  utils.ElementFetch - Element fetched using ID: settings
+2025-05-16 11:03:02 [main] INFO  utils.ElementFetch - Element fetched using ID: inputOptionsDigits
+2025-05-16 11:03:02 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Button
+2025-05-16 11:03:02 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Setting Box
+2025-05-16 11:03:02 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Input Digit
+2025-05-16 11:03:02 [main] INFO  keyword.ActionKeyword - Clicking on element: Setting Button
+2025-05-16 11:03:02 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Box
+2025-05-16 11:03:02 [main] INFO  keyword.ValidationKeyword - Element visible: Input Digit
+2025-05-16 11:03:03 [main] INFO  keyword.ActionKeyword - Sending keys: 5 to element: Input Digit
+2025-05-16 11:03:03 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectFrom']
+2025-05-16 11:03:03 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectTo']
+2025-05-16 11:03:03 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputFrom']
+2025-05-16 11:03:03 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputTo']
+2025-05-16 11:03:03 [main] INFO  keyword.ActionKeyword - Successfully selected option: kilometers [km] on Select From Unit
+2025-05-16 11:03:03 [main] INFO  keyword.ActionKeyword - Successfully selected option: meters [m] on Select To Unit
+2025-05-16 11:03:04 [main] INFO  keyword.ActionKeyword - Sending keys: 12.5 to element: Input From
+2025-05-16 11:03:04 [main] INFO  keyword.ActionKeyword - Getting value from element: Input To
+2025-05-16 11:03:04 [main] INFO  keyword.ValidationKeyword - Validation passed: 12500.0 equals 12500.0
+2025-05-16 11:03:04 [main] INFO  keyword.ActionKeyword - Sending keys: 12500.0 to element: Input To
+2025-05-16 11:03:04 [main] INFO  keyword.ActionKeyword - Getting value from element: Input From
+2025-05-16 11:03:04 [main] INFO  keyword.ValidationKeyword - Validation passed: 12.5 equals 12.5
+2025-05-16 11:03:04 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.length.LengthConverterTest.testConverter ==================
+
+2025-05-16 11:03:04 [main] INFO  base.BaseTest - Test data: 1.234, 0.1234, hectometers [hm], kilometers [km]
+2025-05-16 11:03:04 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //div[@class='rightButton'][@onclick='toggleSettings(event);']
+2025-05-16 11:03:04 [main] INFO  utils.ElementFetch - Element fetched using ID: settings
+2025-05-16 11:03:04 [main] INFO  utils.ElementFetch - Element fetched using ID: inputOptionsDigits
+2025-05-16 11:03:04 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Button
+2025-05-16 11:03:04 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Setting Box
+2025-05-16 11:03:04 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Input Digit
+2025-05-16 11:03:04 [main] INFO  keyword.ActionKeyword - Clicking on element: Setting Button
+2025-05-16 11:03:04 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Box
+2025-05-16 11:03:04 [main] INFO  keyword.ValidationKeyword - Element visible: Input Digit
+2025-05-16 11:03:05 [main] INFO  keyword.ActionKeyword - Sending keys: 5 to element: Input Digit
+2025-05-16 11:03:05 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectFrom']
+2025-05-16 11:03:05 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectTo']
+2025-05-16 11:03:05 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputFrom']
+2025-05-16 11:03:05 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputTo']
+2025-05-16 11:03:05 [main] INFO  keyword.ActionKeyword - Successfully selected option: hectometers [hm] on Select From Unit
+2025-05-16 11:03:05 [main] INFO  keyword.ActionKeyword - Successfully selected option: kilometers [km] on Select To Unit
+2025-05-16 11:03:06 [main] INFO  keyword.ActionKeyword - Sending keys: 1.234 to element: Input From
+2025-05-16 11:03:06 [main] INFO  keyword.ActionKeyword - Getting value from element: Input To
+2025-05-16 11:03:06 [main] INFO  keyword.ValidationKeyword - Validation passed: 0.1234 equals 0.1234
+2025-05-16 11:03:06 [main] INFO  keyword.ActionKeyword - Sending keys: 0.1234 to element: Input To
+2025-05-16 11:03:06 [main] INFO  keyword.ActionKeyword - Getting value from element: Input From
+2025-05-16 11:03:06 [main] INFO  keyword.ValidationKeyword - Validation passed: 1.234 equals 1.234
+2025-05-16 11:03:06 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.length.LengthConverterTest.testConverter ==================
+
+2025-05-16 11:03:06 [main] INFO  base.BaseTest - Test data: 1, 1000000, millimeters [mm], nanometers [nm]
+2025-05-16 11:03:06 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //div[@class='rightButton'][@onclick='toggleSettings(event);']
+2025-05-16 11:03:06 [main] INFO  utils.ElementFetch - Element fetched using ID: settings
+2025-05-16 11:03:06 [main] INFO  utils.ElementFetch - Element fetched using ID: inputOptionsDigits
+2025-05-16 11:03:06 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Button
+2025-05-16 11:03:06 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Setting Box
+2025-05-16 11:03:06 [main] INFO  keyword.ValidationKeyword - Element NOT visible: Input Digit
+2025-05-16 11:03:06 [main] INFO  keyword.ActionKeyword - Clicking on element: Setting Button
+2025-05-16 11:03:06 [main] INFO  keyword.ValidationKeyword - Element visible: Setting Box
+2025-05-16 11:03:07 [main] INFO  keyword.ValidationKeyword - Element visible: Input Digit
+2025-05-16 11:03:07 [main] INFO  keyword.ActionKeyword - Sending keys: 5 to element: Input Digit
+2025-05-16 11:03:07 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectFrom']
+2025-05-16 11:03:07 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //select[@id='selectTo']
+2025-05-16 11:03:07 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputFrom']
+2025-05-16 11:03:07 [main] INFO  utils.ElementFetch - Element fetched using XPATH: //input[@id='inputTo']
+2025-05-16 11:03:07 [main] INFO  keyword.ActionKeyword - Successfully selected option: millimeters [mm] on Select From Unit
+2025-05-16 11:03:08 [main] INFO  keyword.ActionKeyword - Successfully selected option: nanometers [nm] on Select To Unit
+2025-05-16 11:03:08 [main] INFO  keyword.ActionKeyword - Sending keys: 1.0 to element: Input From
+2025-05-16 11:03:08 [main] INFO  keyword.ActionKeyword - Getting value from element: Input To
+2025-05-16 11:03:08 [main] INFO  keyword.ValidationKeyword - Validation passed: 1000000.0 equals 1000000.0
+2025-05-16 11:03:08 [main] INFO  keyword.ActionKeyword - Sending keys: 1000000.0 to element: Input To
+2025-05-16 11:03:08 [main] INFO  keyword.ActionKeyword - Getting value from element: Input From
+2025-05-16 11:03:08 [main] INFO  keyword.ValidationKeyword - Validation passed: 1.0 equals 1.0
+2025-05-16 11:03:08 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.length.LengthConverterTest.testTitle ==================
+
+2025-05-16 11:03:09 [main] INFO  utils.ElementFetch - Page title fetched: Convert Length - Unit Converter
+2025-05-16 11:03:09 [main] INFO  keyword.ValidationKeyword - Validation passed: expectedSubstring '- Unit Converter' and found 'Convert Length - Unit Converter'
+2025-05-16 11:03:09 [main] INFO  keyword.ValidationKeyword - Validation passed: expected 'Convert Length - Unit Converter' and found 'Convert Length - Unit Converter'
+2025-05-16 11:03:09 [main] INFO  base.BaseTest - 
+
+================== START TEST: testCases.length.LengthConverterTest.testVerifyConverterTitleHeader ==================
+
+2025-05-16 11:03:09 [main] INFO  utils.ElementFetch - Element fetched using ID: quantity-title
+2025-05-16 11:03:09 [main] INFO  keyword.ActionKeyword - Getting text from element: Converter Title Header
+2025-05-16 11:03:09 [main] INFO  keyword.ValidationKeyword - Validation passed: expected 'Convert Length' and found 'Convert Length'
