@@ -26,7 +26,7 @@ public interface Utils {
     }
 
     static void infoInputTest(Logger logger, String value1, String fromUnit, String value2, String toUnit){
-        String message = "Test data: " + value1 + ", " + value2 + ", " + fromUnit + ", " + toUnit;
+        String message = "Test data: " + value1 + ", " + fromUnit + ", " + value2 + ", " + toUnit;
         logger.info(message);
         ReportManager.reportInfo(message);
     }
